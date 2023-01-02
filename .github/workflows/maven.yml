@@ -32,7 +32,7 @@ jobs:
         while read -r cmd
         do
         eval sudo $cmd
-         done < <(Rscript -e 'cat(remotes::system_requirements("ubuntu", "20.04"), sep = "\n")')|mvn clean install
+         done < <(Rscript -e 'cat(remotes::system_requirements("ubuntu", "20.04"), sep = "\n")') |mvn clean install
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
